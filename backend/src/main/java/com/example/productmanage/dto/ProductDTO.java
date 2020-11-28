@@ -24,7 +24,7 @@ public class ProductDTO {
     private String paymentMethod;
     private Long deposit;
     private int orderQuantity;
-    private int phone;
+    private String phone;
     private String customerName;
     private String address;
     private String fbName;

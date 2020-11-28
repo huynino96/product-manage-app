@@ -1,15 +1,22 @@
 package com.example.productmanage.model;
 
-import lombok.*;
-import lombok.experimental.Accessors;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -19,8 +26,8 @@ import java.util.Date;
 @Table(name = "products")
 @EntityListeners(AuditingEntityListener.class)
 public class Product implements Serializable {
-
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -36,7 +43,7 @@ public class Product implements Serializable {
     private String paymentMethod;
     private Long deposit;
     private int orderQuantity;
-    private int phone;
+    private String phone;
     private String customerName;
     private String address;
     private String fbName;
