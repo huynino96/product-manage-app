@@ -45,19 +45,21 @@ public class ProductController {
                 .path("/{id}")
                 .buildAndExpand(addedProduct.getId())
                 .toUri();
-        return ResponseEntity.created(location).build();
+        ResponseEntity.created(location).build();
+        return ResponseEntity.ok().body("Product has been Added");
     }
 
     // Update product details PUT /api/products/{id}
     @PutMapping(value="/products/{id}")
-    ResponseEntity<Product> updateProduct(@PathVariable("id")  @Min(1) int id, @Valid @RequestBody ProductDTO inprod) {
+    ResponseEntity updateProduct(@PathVariable("id")  @Min(1) int id, @Valid @RequestBody ProductDTO inprod) {
         Product prd = productService.findById(id)
                 .orElseThrow(()->new ProductNotFoundException("No Product with ID : "+id));
 
         Product newProduct = ProductMapper.DtoToEntity(inprod);
         newProduct.setId(prd.getId());
         productService.save(newProduct);
-        return ResponseEntity.ok().body(newProduct);
+        ResponseEntity.ok().body(newProduct);
+        return ResponseEntity.ok().body("Product has been Updated");
     }
 
     // Delete product by ID DELETE /api/products/{id}
