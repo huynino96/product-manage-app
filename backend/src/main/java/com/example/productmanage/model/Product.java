@@ -37,6 +37,15 @@ public class Product implements Serializable {
     private String productStatus;
     private Long price;
     private Long shippingFee;
+
+    public Long getTotalPrice() {
+        return totalPrice;
+    }
+
+    private void setTotalPrice() {
+        this.totalPrice = price * orderQuantity + shippingFee;
+    }
+
     private Long totalPrice;
     private String shippingCode;
     private String orderCode;
@@ -56,5 +65,6 @@ public class Product implements Serializable {
     @Column(nullable = false)
     @LastModifiedDate
     private LocalDateTime updatedDate;
+
 
 }

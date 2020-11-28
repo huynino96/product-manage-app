@@ -16,15 +16,15 @@ public class ProductMapper {
                 .setNote(product.getNote());
     }
 
-    public static ProductDTO EntityToDto(Product product){
+    public static Long EntityToDto(Product product){
         return new ProductDTO().setProductName(product.getProductName())
                 .setLoyalty(product.getLoyalty()).setProductStatus(product.getProductStatus())
                 .setPrice(product.getPrice()).setShippingFee(product.getShippingFee())
-                .setTotalPrice(product.getTotalPrice()).setShippingCode(product.getShippingCode())
+                .setShippingCode(product.getShippingCode())
                 .setOrderCode(product.getOrderCode()).setPaymentMethod(product.getPaymentMethod())
                 .setDeposit(product.getDeposit()).setOrderQuantity(product.getOrderQuantity())
                 .setPhone(product.getPhone()).setCustomerName(product.getCustomerName())
                 .setAddress(product.getAddress()).setFbName(product.getFbName()).setFbLink(product.getFbLink())
-                .setNote(product.getNote());
+                .setNote(product.getNote()).setTotalPrice(product.getTotalPrice());
     }
 }
