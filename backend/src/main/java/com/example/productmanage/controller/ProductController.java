@@ -1,5 +1,6 @@
 package com.example.productmanage.controller;
 
+import com.example.productmanage.exception.ProductNotFoundException;
 import com.example.productmanage.model.Product;
 import com.example.productmanage.repository.ProductRepository;
 import com.example.productmanage.service.ProductService;
