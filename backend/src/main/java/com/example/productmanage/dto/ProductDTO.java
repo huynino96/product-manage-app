@@ -18,16 +18,6 @@ public class ProductDTO {
     private String productStatus;
     private Long price;
     private Long shippingFee;
-
-    public Long getTotalPrice() {
-        return price * orderQuantity + shippingFee;
-    }
-
-    public Long setTotalPrice(Long totalPrice) {
-        this.totalPrice = price * orderQuantity + shippingFee;
-        return this.totalPrice;
-    }
-
     private Long totalPrice;
     private String shippingCode;
     private String orderCode;
@@ -40,5 +30,14 @@ public class ProductDTO {
     private String fbName;
     private String fbLink;
     private String note;
+
+    public Long getTotalPrice() {
+        return price * orderQuantity + shippingFee;
+    }
+
+    public Long setTotalPrice() {
+        this.totalPrice = price * orderQuantity + shippingFee;
+        return this.totalPrice;
+    }
 
 }

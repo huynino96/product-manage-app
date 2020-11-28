@@ -25,6 +25,6 @@ public class ProductMapper {
                 .setDeposit(product.getDeposit()).setOrderQuantity(product.getOrderQuantity())
                 .setPhone(product.getPhone()).setCustomerName(product.getCustomerName())
                 .setAddress(product.getAddress()).setFbName(product.getFbName()).setFbLink(product.getFbLink())
-                .setNote(product.getNote()).setTotalPrice(product.getTotalPrice());
+                .setNote(product.getNote()).setTotalPrice();
     }
 }
